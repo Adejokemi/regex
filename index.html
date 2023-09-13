@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <script>
+//1. cat and car
+console.log(/c[ar]t/.test(`the cat is in the car`)); 
+
+// 2. pop and prop
+console.log(/p[or]p/.test(`the prop can pop`)); 
+
+// 3. ferret, ferry, and ferrari
+console.log(/ferr[et|y|ari]/.test(`ferret entered a ferry to buy a ferrari`)); 
+
+// 4. Any word ending in ious
+console.log(/\b\w+ious\b/.test(`she was anxious`)); 
+
+// 5. A whitespace character followed by a period, comma, colon, or semicolon
+console.log(/\s[.,:;]/.test(" .,:;"));
+
+// 6. A word longer than six letters
+console.log(/\b\w{7,}\b/.test(`the big elephant chased the antelope`));
+
+// 7. A word without the letter e (or E)
+console.log(/\b[^eE\s]+\b/.test(`banana and milk is good`)); 
+
+
+//quoting
+const lyrics = "She say, 'Do you love me.' I Told her, 'Only partly', i only love my mum and Mahbed I'm sorry";
+
+const updatedlyrics = lyrics.replace(/'([^']*)'/g, '"$1"');
+
+console.log(updatedlyrics);
+
+
+
+//numbers
+console.log(/^[-+]?(\d+\.\d*|\.\d+|\d+)([eE][-+]?\d+)?$/.test(1*4+4-35));
+
+    </script>
+</body>
+</html>
